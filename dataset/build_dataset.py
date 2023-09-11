@@ -3,8 +3,14 @@ import json
 import re
 
 counter = 0
+# 获取输入文件名，并根据文件名设置 tag 的值
+input_filename = sys.stdin.name
+if 'pos' in input_filename:
+    tag = '1'
+elif 'neg' in input_filename:
+    tag = '0'
+    
 for line in sys.stdin:
-
     line = line.strip()
     # 按制表符分割行
     line = line.split('\t')
@@ -15,11 +21,10 @@ for line in sys.stdin:
 
     if line:
         # 输出 
-        tag = str(sys.argv[1])
         print(content + '\t' + tag)
         counter += 1
     else:
         continue
 
-    if counter >= int(sys.argv[2]):
+    if counter >= int(sys.argv[1]):
         break
