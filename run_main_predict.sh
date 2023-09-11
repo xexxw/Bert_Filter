@@ -1,7 +1,7 @@
 #!/bin/bash
 max_length=512
 output_dir=checkpoint/$(date +%Y_%m_%d_%H_%M_%S)
-dataset=allcorpus
+dataset=dataset
 
 CUDA_LAUNCH_BLOCKING=1 torchrun \
     --nnodes=1 \
