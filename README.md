@@ -9,3 +9,6 @@ shuf train.txt
 ## Train and valuate
 
 sh run_main_predict.sh
+
+## Predict with slid windows
+python predict_slid_windows.py
